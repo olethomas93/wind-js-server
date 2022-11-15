@@ -226,14 +226,14 @@ function convertGribToJson(stamp, targetMoment){
 	checkPath('json-data', true);
 
 	var exec = require('child_process').exec, child;
-	grib2json('grib-data/'+stamp+'.f000', {
-		data: true,
-		output: 'json-data/output.json'
-	  })
-	  .then(function (json) {
+	// grib2json('grib-data/'+stamp+'.f000', {
+	// 	data: true,
+	// 	output: 'json-data/output.json'
+	//   })
+	//   .then(function (json) {
 		
-		// Do whatever with the json data, same format as output of the CLI
-	  })
+	// 	// Do whatever with the json data, same format as output of the CLI
+	//   })
 
 	child = exec(__dirname+'/converter/bin/grib2json --data --output json-data/'+stamp+'.json --names --compact grib-data/'+stamp+'.f000',
 		{maxBuffer: 500*1024},
